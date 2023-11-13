@@ -5,28 +5,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public FixedJoystick joystick;
-    public float moveSpeed;
+    [SerializeField] FixedJoystick joystick;
+    [SerializeField] float moveSpeed;
 
     float horizontalInput, verticalInput;
 
-    int score = 0;
-
-    public GameObject winText;
+    public int score = 0;
     public int winScore;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void FixedUpdate()
     {
@@ -46,9 +32,8 @@ public class Player : MonoBehaviour
 
             if(score >= winScore)
             {
-                winText.SetActive(true);
+                moveSpeed = 0;
             }
-            
         }
     }
 }
